@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-font: 'Host Grotesk', sans-serif;
+    --primary-color: #06424c;
+    --secondary-color: #edf4d4;
+    --accent-color: #4e8fda;
+    --dark-mode-text: white;
+}
+
+header img {
+    max-inline-size: 200px;
+}
+
+body {
+    margin: 0;
+    min-block-size: 100vh;
+    background: 
+        linear-gradient(rgba(6, 66, 76, 0.75), rgba(6, 66, 76, 0.75)), 
+        url('../images/the_green_group-photography-ryanjohnstonco-30.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+main {
+    max-inline-size: 900px;
+    margin: 0 auto;
+}
+
+.page-header {
+    max-inline-size: 900px;
+    margin: 0 auto 3rem;
+}
+
+h1 {
+    font-family: var(--primary-font);
+    font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+    color: var(--secondary-color);
+    margin-block-end: 0;
+}
+
+h2 {
+    text-align: end;
+    font-family: var(--primary-font);
+    font-size: clamp(1.5rem, 1rem + 2vw, 2rem);
+    color: var(--dark-mode-text);
+    margin-block-start: 0.5rem;
+}
+
+h3 {
+    font-family: var(--primary-font);
+    color: var(--dark-mode-text);
+}
+
+li {
+    font-family: var(--primary-font);
+    color: var(--dark-mode-text);
+    margin: 0.3rem 0;
+}
+
+p {
+    font-family: var(--primary-font);
+    color: var(--dark-mode-text);
+}
+
+.we-provide {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin: 4rem 0;
+}
+
+.img-container {
+    flex-basis: 45%;
+    aspect-ratio: 1/1;
+    border-radius: 15px;
+    position: relative;
+}
+
+.img-container img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+}
+
+.img-container::before,
+.img-container::after {
+    content: '';
+    position: absolute;
+    inline-size: 2rem;
+    block-size: 2rem;
+    z-index: 3;
+}
+
+.img-container::before {
+    top: -15px;
+    left: -15px;
+    border-top: 20px solid var(--secondary-color);
+    border-left: 20px solid var(--secondary-color);
+}
+
+.img-container::after {
+    bottom: -15px;
+    right: -15px;
+    border-bottom: 20px solid var(--secondary-color);
+    border-right: 20px solid var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    body {
+        background-position: 80% center;
+    }
+
+    header img {
+    max-inline-size: 150px;
+    }
+
+    main {
+        padding: 2rem;
+    }
+
+    .we-provide {
+        flex-direction: column;
+    }
+}
